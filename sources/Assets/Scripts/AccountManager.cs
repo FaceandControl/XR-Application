@@ -25,6 +25,7 @@ public class AccountManager : MonoBehaviour
     {
         var login = loginInputField.text;
         var password = passwordInputField.text;
+        AccountLogin = login;
         switchScene.ToMainScene();
     }
 

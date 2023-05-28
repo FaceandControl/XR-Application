@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PreviewListControl : MonoBehaviour
 {
+    public Text accountLogin;
     public GameObject listItemTemplate;
     public IList<PreviewItem> previewItems;
 
@@ -29,8 +30,10 @@ public class PreviewListControl : MonoBehaviour
     void Start()
     {
         Clean();
+        accountLogin.text = AccountManager.AccountLogin;
         previewItems = GetFackedPreviewItems();
         Populate(previewItems);
+
     }
 
     // Update is called once per frame

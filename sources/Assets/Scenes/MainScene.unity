@@ -1839,6 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29068fd8aeed5f4d9c24151bf2f183c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  accountLogin: {fileID: 663939706}
   listItemTemplate: {fileID: 8912929994575210259, guid: 3f4c7137267bc02469ba7e27b49dd0dd, type: 3}
 --- !u!1 &1879844992
 GameObject:
