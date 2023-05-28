@@ -8,6 +8,7 @@ public class AccountManager : MonoBehaviour
     public static bool IsLoggedIn { get; private set; } = false;
     public static string AccountLogin { get; private set; } = string.Empty;
 
+    public SwitchScene switchScene;
     public InputField loginInputField;
     public InputField passwordInputField;
 
@@ -24,8 +25,7 @@ public class AccountManager : MonoBehaviour
     {
         var login = loginInputField.text;
         var password = passwordInputField.text;
-
-        Debug.Log(login);
+        switchScene.ToMainScene();
     }
 
     public void LogoutAction()
