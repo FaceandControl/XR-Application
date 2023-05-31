@@ -73,7 +73,6 @@ public class AccountManager : MonoBehaviour
 
 public class Account
 {
-    public Image Avatar { get; set; } = null; // Default avatar, feature with changing avatar is not implemented
     public string Login { get; set; }
     public string Password { get; set; }
 }
