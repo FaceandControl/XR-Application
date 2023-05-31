@@ -695,8 +695,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   switchScene: {fileID: 1106347891}
-  loginInputField: {fileID: 1220436704}
-  passwordInputField: {fileID: 1534155796}
+  loginPanelLoginInputField: {fileID: 1220436704}
+  loginPanelPasswordInputField: {fileID: 1534155796}
+  registerPanelLoginInputField: {fileID: 1479827885}
+  registerPanelPasswordInputField: {fileID: 782278482}
+  registerPanelConfirmPasswordInputField: {fileID: 1475876440}
 --- !u!1 &267818779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1018,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 430703451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 262302950}
+        m_TargetAssemblyTypeName: AccountManager, Assembly-CSharp
+        m_MethodName: RegisterAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &430703451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,8 +1152,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 782278483}
   m_TextComponent: {fileID: 1526450055}
   m_Placeholder: {fileID: 267818781}
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -1412,7 +1427,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106347889}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2217,8 +2232,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1475876441}
   m_TextComponent: {fileID: 1090779550}
   m_Placeholder: {fileID: 1623947324}
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -2727,8 +2742,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1534155797}
   m_TextComponent: {fileID: 194860943}
   m_Placeholder: {fileID: 1539830224}
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
