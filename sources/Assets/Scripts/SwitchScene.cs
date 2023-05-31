@@ -15,11 +15,6 @@ public class SwitchScene : MonoBehaviour
         
     }
 
-    public void ToRegisterScene() 
-    {
-        SceneManager.LoadScene("RegisterScene");
-    }
-
     public void ToMainScene()
     {
         SceneManager.LoadScene("MainScene");
