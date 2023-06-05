@@ -100,7 +100,6 @@ public class ClassificationPlacementManager : MonoBehaviour
 
     void Update()
     {
-                m_WallUI.SetActive(true);
 #if UNITY_IOS
         if (m_ClassificationManager.currentClassification == ARMeshClassification.Table ||
             m_ClassificationManager.currentClassification == ARMeshClassification.Floor ||
