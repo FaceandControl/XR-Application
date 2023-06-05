@@ -98,6 +98,12 @@ public class ClassificationPlacementManager : MonoBehaviour
 
     const float k_TweenTime = 0.4f;
 
+    private void Awake()
+    {
+        m_WallPrefabs.Add(Resources.Load("prefabs/" + PlayerPrefs.GetString("image")) as GameObject);
+        Debug.Log(Resources.Load("prefabs/" + PlayerPrefs.GetString("image")));
+    }
+
     void Update()
     {
 #if UNITY_IOS
@@ -134,6 +140,7 @@ public class ClassificationPlacementManager : MonoBehaviour
             m_TableUI.SetActive(false);
         }
 #endif
+                m_WallUI.SetActive(true);
     }
 
     public void PlaceFloorObject(int indexToPlace)
@@ -149,7 +156,8 @@ public class ClassificationPlacementManager : MonoBehaviour
 
     public void PlaceWallObject(int indexToPlace)
     {
-        m_SpawnedObject = Instantiate(m_WallPrefabs[indexToPlace], m_Reticle.GetReticlePosition().position, m_Reticle.GetReticlePosition().rotation);
+        //m_SpawnedObject = Instantiate(gameObject, m_Reticle.GetReticlePosition().position, m_Reticle.GetReticlePosition().rotation);
+        m_SpawnedObject = Instantiate(m_WallPrefabs[3], m_Reticle.GetReticlePosition().position, m_Reticle.GetReticlePosition().rotation);
         m_SpawnedObject.transform.localScale = Vector3.zero;
         
         m_SpawnedObject.transform.DOScale(Vector3.one, k_TweenTime).SetEase(m_TweenEase);

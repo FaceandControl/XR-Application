@@ -5,16 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MainScene.unity
-    guid: 45187a9658e439c44af1adc3950d3bd0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RegisterScene.unity
     guid: b7d8b4100843ed34aae1c3cb7c8a5a0d
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 45187a9658e439c44af1adc3950d3bd0
   - enabled: 1
     path: Assets/Meshing/Scenes/Meshing.unity
     guid: d5ebb81bb19834855bb7ca490ab73fbf
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a68874c6899b2274baad71eba7cb6f88, type: 2}
-    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: ef1cca6b69040d24eab3e463f6df0eef, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0f2ae7fa43ecac246ade3caad4411dab, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 46ee782f348cc074194554fa292f9ff3,
+      type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ad4d7f226aa3a534b8fb28f89c84e258,
+      type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 30571f171d978f94794c6f87b8667a08,
+      type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: fd30cf7030bd342e1b45a869462e0ee0,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 6f7fbab671a5848ddae17e25cb330888,
+      type: 2}
+    com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 548641ba2e111fb4bb0267a9742ca02c,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0c7320f37e3f8b24c9e5b5fd999e40e0,
+      type: 2}
