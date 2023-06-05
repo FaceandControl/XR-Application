@@ -9,45 +9,62 @@ public class AccountManager : MonoBehaviour
     public static string AccountLogin { get; private set; } = string.Empty;
 
     public SwitchScene switchScene;
-    public InputField loginInputField;
-    public InputField passwordInputField;
+    public InputField loginPanelLoginInputField;
+    public InputField loginPanelPasswordInputField;
+    public InputField registerPanelLoginInputField;
+    public InputField registerPanelPasswordInputField;
+    public InputField registerPanelConfirmPasswordInputField;
 
     private static readonly List<Account> _registeredAccounts = new List<Account>
     {
         new Account
         {
-            Login = "max",
+            Login = "test",
             Password = "pass"
         }
     };
 
-    public void LoginAction() // string login, string password
+    public void LoginAction()
     {
-        var login = loginInputField.text;
-        var password = passwordInputField.text;
-        AccountLogin = login;
-        switchScene.ToMainScene();
+        var login = loginPanelLoginInputField.text;
+        var password = loginPanelPasswordInputField.text;
+
+
+        if (ValidateLogin(login, password)) 
+        {
+            AccountLogin = login;
+            switchScene.ToMainScene();
+        }
     }
 
     public void LogoutAction()
     {
         IsLoggedIn = false;
         AccountLogin = string.Empty;
-
-        //return true;
     }
 
-    public bool RegisterAction(string login, string password, string repliedPassword)
+    public void RegisterAction()
     {
-        if (ValidateRegistration(login, password, repliedPassword))
+        var login = registerPanelLoginInputField.text;
+        var password = registerPanelPasswordInputField.text;
+        var confirmedPassword = registerPanelConfirmPasswordInputField.text;
+
+        if (ValidateRegistration(login, password, confirmedPassword))
         {
             _registeredAccounts.Add(new Account { Login = login, Password = password });
+            switchScene.ToRegisterScene();
         }
-        return false;
     }
 
     private bool ValidateLogin(string login, string password)
     {
+        Account account = _registeredAccounts.FirstOrDefault(x => x.Login == login);
+
+        if (account != null && account.Password == password)
+        {
+            return true;
+        }
+
         return false;
     }
 
@@ -57,23 +74,35 @@ public class AccountManager : MonoBehaviour
         {
             return true;
         }
+
         return false;
     }
 
     private bool IsRegisterInputValid(string login, string password, string repliedPassword)
     {
-        return string.IsNullOrEmpty(login) && string.IsNullOrEmpty(password) && password == repliedPassword;
+        if (!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password) && password == repliedPassword)
+        {
+            return true;
+        }
+
+        return false;
     }
 
-    private bool IsAccountNotRegistered(string login)   
+    private bool IsAccountNotRegistered(string login)
     {
-        return _registeredAccounts.FirstOrDefault(x => x.Login == login) != null;
+        Account account = _registeredAccounts.FirstOrDefault(x => x.Login == login);
+
+        if (account == null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
 
 public class Account
 {
-    public Image Avatar { get; set; } = null; // Default avatar, feature with changing avatar is not implemented
     public string Login { get; set; }
     public string Password { get; set; }
 }
