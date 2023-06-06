@@ -14,7 +14,8 @@ public class PreviewListControl : MonoBehaviour
         foreach (var previewItem in previewItems)
         {
             var item = Instantiate(listItemTemplate, transform);
-            item.GetComponentInChildren<Text>().text = previewItem.Name;
+            item.GetComponentInChildren<Text>().text = previewItem.Image;
+            item.transform.Find("PreviewImage").GetComponent<Image>().sprite = Resources.Load<Sprite>(previewItem.Image);
         }
     }
 
@@ -60,26 +61,22 @@ public class PreviewListControl : MonoBehaviour
         {
             new PreviewItem()
             {
-                Image = null,
-                Name = "Hello",
+                Image = "Mario",
                 IsSaved = false,
             },
             new PreviewItem()
             {
-                Image = null,
-                Name = "Hello1",
+                Image = "apple",
                 IsSaved = false,
             },
             new PreviewItem()
             {
-                Image = null,
-                Name = "Hello2",
+                Image = "duck",
                 IsSaved = true,
             },
             new PreviewItem()
             {
-                Image = null,
-                Name = "Hello3",
+                Image = "linux",
                 IsSaved = true,
             }
         };
@@ -88,7 +85,6 @@ public class PreviewListControl : MonoBehaviour
 
 public class PreviewItem : MonoBehaviour
 {
-    public Image Image { get; set; }
-    public string Name { get; set; }
+    public string Image { get; set; }
     public bool IsSaved { get; set; }
 }

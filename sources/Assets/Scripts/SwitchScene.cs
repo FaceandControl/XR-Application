@@ -24,4 +24,9 @@ public class SwitchScene : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    public void ToMeshingScene()
+    {
+        SceneManager.LoadScene("Meshing");
+    }
 }
